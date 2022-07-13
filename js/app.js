@@ -35,7 +35,7 @@ while (!myNameAnswered)
 
   else
   {
-    console.log('Oh no ya don\'t! Please answer with a \'yes\' or a \'no\' and I\'ll forgive you c:.');
+    console.log('Oh no ya don\'t ,' + theirName + '! Please answer with a \'yes\' or a \'no\' and I\'ll forgive you c:.');
   }
 }
 
@@ -45,61 +45,61 @@ let birthplace = prompt('Were you born on a ship in the Caspian Sea? y/n?').toLo
 // TODO: add in flavor text
 if (birthplace === 'y' || birthplace === 'yes')
 {
-  console.log('');
+  console.log('Woahhh! Gnarly, friend! I was born on land');
 }
 else if (birthplace === 'n' || birthplace === 'no')
 {
-  console.log('');
+  console.log('You too? We have so much in common ' + theirName + '.');
 }
 else
 {
-  console.log('');
+  console.log('Didn\'t like the question?');
 }
 
 // TODO: add that Kel loves orange soda. he do, he do, he dooooo-uuu
-let orangeSoda = prompt('Do you love orange soda more than life itself? y/n?').toLowerCase();
+let orangeSoda = prompt('Do you love orange soda, too? y/n?').toLowerCase();
 
 if(orangeSoda === 'y' || orangeSoda === 'yes')
 {
-  console.log('');
+  console.log('Do you know who else loves orange soda? Kel. Kel loves orange soda! He do, he do, he doo~uu.');
 }
 else if (orangeSoda === 'n' || orangeSoda === 'no')
 {
-  console.log('');
+  console.log('Same. I have a neutral amount of love for orange soda. Not like that Kel guy.');
 }
 else
 {
-  console.log('Not much of a talker, are we?');
+  console.log('Not much of a citrus fan, are we?');
 }
 
 let muffinMan = prompt('Do I know the muffin man? y/n?').toLowerCase();
 
 if (muffinMan === 'y' || muffinMan === 'yes')
 {
-  console.log('');
+  console.log('The muffin man? The muffin man!! Yes I\'m married to the muffin man, didn\'t you know?');
 }
 else if (muffinMan === 'n' || muffinMan === 'no')
 {
-  console.log('');
+  console.log('You don\'t? He lives on Drury Lane. I\'ll introduce you next time.');
 }
 else
 {
-  console.log('');
+  console.log('Not much of a talker, are we?');
 }
 
 let hotdog = prompt('Is a hotdog a sandwich? y/n?').toLowerCase();
 
 if (hotdog === 'y' || hotdog === 'yes')
 {
-  console.log('');
+  console.log('You\'re right! And a so is a hamburger, in my eyes.');
 }
 else if (hotdog === 'n' || hotdog === 'no')
 {
-  console.log('');
+  console.log('C\'mon ' + theirName + '! You\'re better than this! J.k. I respect our differences :3.');
 }
 else
 {
-  console.log('');
+  console.log('No comment.');
 }
 
 console.log('Thanks for playing along so well, ' + theirName + '!');
