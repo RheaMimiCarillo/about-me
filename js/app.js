@@ -23,13 +23,13 @@ while (!myNameAnswered)
 
   if (myName === 'y' || myName === 'yes')
   {
-    console.log('Nice guess, but my name is: Rhea (ray-ah)');
+    console.log('Nice guess! My name is: Rhea (ray-ah).');
     myNameAnswered = true;
   }
 
   else if (myName === 'n' || myName === 'no')
   {
-    console.log('Correct! My name isn\'t \'Reeya\', it\'s R H E A Rhea (ray-ah); same as the mythical Greek Mother of the Gods');
+    console.log('Correct! My name isn\'t \'Reeya\', it\'s  R H E A  Rhea (ray-ah); same as the mythical Greek Mother of the Gods.');
     myNameAnswered = true;
   }
 
@@ -39,7 +39,8 @@ while (!myNameAnswered)
   }
 }
 
-let birthplace = prompt('Was I born on a ship in the Caspian Sea?').toLowerCase();
+// TODO: change questions to ask the user about them. after they answer, tell them about myself for the questions.
+let birthplace = prompt('Were you born on a ship in the Caspian Sea? y/n?').toLowerCase();
 
 // TODO: add in flavor text
 if (birthplace === 'y' || birthplace === 'yes')
@@ -56,7 +57,7 @@ else
 }
 
 // TODO: add that Kel loves orange soda. he do, he do, he dooooo-uuu
-let orangeSoda = prompt('Do I love orange soda more than life itself?').toLowerCase();
+let orangeSoda = prompt('Do you love orange soda more than life itself? y/n?').toLowerCase();
 
 if(orangeSoda === 'y' || orangeSoda === 'yes')
 {
@@ -68,10 +69,10 @@ else if (orangeSoda === 'n' || orangeSoda === 'no')
 }
 else
 {
-  console.log('');
+  console.log('Not much of a talker, are we?');
 }
 
-let muffinMan = prompt('Do I know the muffin man?').toLowerCase();
+let muffinMan = prompt('Do I know the muffin man? y/n?').toLowerCase();
 
 if (muffinMan === 'y' || muffinMan === 'yes')
 {
@@ -86,7 +87,7 @@ else
   console.log('');
 }
 
-let hotdog = prompt('Is a hotdog a sandwich to me?').toLowerCase();
+let hotdog = prompt('Is a hotdog a sandwich? y/n?').toLowerCase();
 
 if (hotdog === 'y' || hotdog === 'yes')
 {
