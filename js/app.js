@@ -107,26 +107,29 @@ function orangeSodaFunction()
 orangeSodaFunction();
 gameQuestionsCounter++;
 
-
-let muffinMan = prompt('Do I know the muffin man? y/n?').toLowerCase();
-if (muffinMan === 'y' || muffinMan === 'yes')
+function muffinManFunction()
 {
+  let muffinMan = prompt('Do I know the muffin man? y/n?').toLowerCase();
+  if (muffinMan === 'y' || muffinMan === 'yes')
+  {
   // console.log('You don\'t? He lives on Drury Lane. I know him from waaaay back to nursury school. I\'ll introduce you next time.');
-  alert('Don\'t I? He lives on Drury Lane. I know him from waaaay back to nursury school. I\'ll introduce you next time.');
-  score++;
-}
-else if (muffinMan === 'n' || muffinMan === 'no')
-{
+    alert('Don\'t I? He lives on Drury Lane. I know him from waaaay back to nursury school. I\'ll introduce you next time.');
+    score++;
+  }
+  else if (muffinMan === 'n' || muffinMan === 'no')
+  {
   // console.log('The muffin man? The muffin man!! Yes I\'m married to the muffin man, didn\'t you know?');
-  alert('The muffin man? Never met the guy.');
-}
-else
-{
+    alert('The muffin man? Never met the guy.');
+  }
+  else
+  {
   // console.log('Not much of a talker, are we?');
   // TO DO: add flavor text
   // TO DO: look at else alerts 1-5
-  alert(`${muffinMan}??`);
+    alert(`${muffinMan}??`);
+  }
 }
+muffinManFunction();
 gameQuestionsCounter++;
 
 
