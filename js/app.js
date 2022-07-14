@@ -29,7 +29,7 @@ while (!myNameAnswered) // while loop to force the user to enter a yes/no input
   if (myName === 'y' || myName === 'yes')
   {
     // console.log('Nice guess! My name is: Rhea (ray-ah).');
-    alert('Nice guess! My name is: Rhea (ray-ah).');
+    alert('Oh, so you\'ve heard of me? I do be Rhea (ray-ah).');
     myNameAnswered = true;
   }
 
@@ -140,8 +140,9 @@ while(remainingAgeGuesses > 0)
   if (ageGuess === myAge)
   {
     // alerts the user that they guessed correctly, then break out of the loop
-    console.log(`user entered ${ageGuess} and they have ${remainingAgeGuesses} remaining`);
+    console.log(`user entered '${ageGuess}' and they have ${remainingAgeGuesses} remaining`);
     alert(`I am ${myAge} years wise! How'd ya figure?`);
+    console.log('user entered the correct answer');
     break;
   }
 
@@ -172,14 +173,14 @@ while(remainingAgeGuesses > 0)
 
 // todo: - add a 7th question
 // - the answers to the 7th question will be stored in an array
-// - the uswer will get 6 attempts to guess correctly
+// - the user will get 6 attempts to guess correctly
 // - the guesses will end once the user guesses any items in the array
 // - OR it will end when they run out of attempts
 // 	- whichever comes first
 // - then display all the correct answers (meaning the items in the array) to the user using a for loop
 
 // an array of chips that I like
-let chipsILike = ['Kettle Chips', 'Tim\'s Cascade Chips', 'Chocolate Chips', 'Chip \'n\' Dale: Rescue Rangers', 'Chip Skylark', 'Hospital Ice Chips','Not Pringle\'s', 'Chips Ahoy!', 'Fish \'n Chips', 'Chip Butty', 'Kale Chips', 'Potato Chips'];
+let chipsILike = ['Kettle Chips', 'Tim\'s Cascade Chips', 'Chocolate Chips', 'Chip \'n\' Dale: Rescue Rangers', 'Chip Skylark', 'Hospital Ice Chips', 'Chips Ahoy!', 'Fish \'n Chips', 'Chip Butty', 'Kale Chips', 'Not Pringle\'s', 'Potato Chips'];
 
 // boolean flag to for while loop condition
 let theyGotItRight = false;
@@ -191,24 +192,30 @@ let chipsGuessesRemaining = 6;
 while (!theyGotItRight && chipsGuessesRemaining > 0)
 {
   // asks them to guess what kind of chips I like and makes their input lowercase
-  let chipsGuess = prompt('Which chips do I like?');
+  let chipsGuess = prompt(`What kinds of of 'chip' do I like? Chip lives remaining: ${chipsGuessesRemaining}.`);
+  console.log(`The user guessed '${chipsGuess}'`);
   chipsGuessesRemaining --;
+  console.log(`the user has '${chipsGuessesRemaining}' guesses remaining`);
   for(let i = 0; i < chipsILike.length; i++)
   {
-    if (chipsGuess === chipsILike[i-1])
+    console.log('the value of i is: ' + i);
+    console.log(`the value of chipsILike[${i}]: is '${chipsILike[i]}'`);
+    if (chipsGuess === chipsILike[i].toLowerCase())
     {
-      console.log(`The user guessed ${chipsGuess} and they have '${chipsGuessesRemaining}' guesses remaining, but they answered correctly`);
-      alert(`Wow ${theirName}! You really know your chips!`);
+      console.log('the user guessed a correct answer');
+      alert(`Wow ${theirName}! ${chipsGuess}?? Ya got me. You must know your chips, huh?`);
       theyGotItRight = true;
     }
     else
     {
-      console.log(`The user guessed ${chipsGuess} and they have ${chipsGuessesRemaining} guesses remaining.`);
+      console.log(`The user's input isn't '${chipsILike[i].toLowerCase()}'.`);
     }
   }
+  alert('Uh oh, SpaghettiOs! Can we try something different?');
 }
 
-alert('Here are 7 of the chips I like:');
+// alerts the user to every item in the chip array
+alert('Thanks for playing! For reference, here\'s a list of some chips I like:');
 for (let i = 0; i < chipsILike.length; i++)
 {
   alert(chipsILike[i]);
