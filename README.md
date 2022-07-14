@@ -5,6 +5,9 @@ The quiz will tally how many the user gets correct and will alert them with thei
 
 ## Author: Rhea Carillo
 
+Pair Programming:
+Driver: Marina Sivilay ; Navigator: Rhea Carillo
+
 ### Reflections and Comments
 
 How did this go, overall?
