@@ -1,10 +1,9 @@
-# LAB - Class 02
-
-## About Me
+# About Me Project Website
 
 This is an interactive website that teaches the user a bit about me, Rhea Carillo, by way of short quizzes.
+The quiz will tally how many the user gets correct and will alert them with their score at the end of the quiz.
 
-### Author: Rhea Carillo
+## Author: Rhea Carillo
 
 ### Reflections and Comments
 
