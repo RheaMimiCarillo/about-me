@@ -3,6 +3,9 @@
 // single quotes for JS; double quotes for HTML
 console.log('henlo world :3');
 
+
+// TODO: add scoreCounter and set it to 0;
+// TODO: increment score counter whenever the user guesses correctly
 let theirName = prompt('Hello there, stranger! What can we call you?');
 
 if(theirName.length > 0)
@@ -18,7 +21,7 @@ else
 }
 
 let myNameAnswered = false;
-while (!myNameAnswered) // while loop to force the user to enter a yes/no answer
+while (!myNameAnswered) // while loop to force the user to enter a yes/no input
 {
   //toLowerCase() will transform the string to all lowercase
   let myName = prompt('Is my first name Reeya? y/n?').toLowerCase();
@@ -116,5 +119,57 @@ else
   alert('No comment.');
 }
 
+// TODO: 6th question
+/*
+  - write a question that asks the user to guess a number
+  - alert() the user if their guess is too high or too low
+  - give the user EXACTLY 4 guesses to get the correct answer
+  - after the user is out of guesses, let em know the CORRECT answer
+  - We'll have them guess a my age....
+*/
+
+// this loop will ask the user to guess my age
+let remainingGuesses = 4;
+let myAge = 30;
+while(remainingGuesses > 0)
+{
+  let ageGuess = prompt(`How many years wise am I? You have ${remainingGuesses} lives remaining. Choose wisely.`);
+  // decrement remaining guesses
+  remainingGuesses--;
+  // if the user's guess is the same as my age
+  if (ageGuess === myAge)
+  {
+    // alerts the user that they guessed correctly, then break out of the loop
+    console.log(`user entered ${ageGuess} and they have ${remainingGuesses} remaining`);
+    alert(`I am ${myAge} years wise! How'd ya figure?`);
+    break;
+  }
+
+  // if their guess is higher than my age
+  else if (ageGuess > myAge)
+  {
+    // alerts the user they guessed too high
+    console.log(`user entered '${ageGuess}' and they have ${remainingGuesses} remaining`);
+    alert('Uhhh, do I seem that old?');
+  }
+
+  // if their guess is lower than my age
+  else if (ageGuess < myAge)
+  {
+    // alerts the user they guessed too low
+    console.log(`user entered '${ageGuess}' and they have ${remainingGuesses} remaining`);
+    alert('Aww, are you trying to flatter me with that lowball guess?');
+  }
+
+  // any other input that isn't a number
+  else
+  {
+    // alerts the user that they need to input a number
+    console.log(`user entered '${ageGuess}' and they have ${remainingGuesses} remaining`);
+    alert('*boop boooop*. Please enter a whole number value.');
+  }
+}
+
+// todo: add their score out of how many total questions
 // console.log('Thanks for playing along so well, ' + theirName + '!');
-alert('Thanks for playing along so well, ' + theirName + '!');
+alert(`Thanks for playing til the end ${theirName}! Your score was: `);
