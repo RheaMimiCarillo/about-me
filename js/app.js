@@ -84,24 +84,27 @@ function birthplaceFunction()
 birthplaceFunction();
 gameQuestionsCounter++;
 
-
-let orangeSoda = prompt('Am I in love with orange soda? y/n?').toLowerCase();
-if(orangeSoda === 'y' || orangeSoda === 'yes')
+function orangeSodaFunction()
 {
+  let orangeSoda = prompt('Am I in love with orange soda? y/n?').toLowerCase();
+  if(orangeSoda === 'y' || orangeSoda === 'yes')
+  {
   // console.log('Do you know who else loves orange soda? Kel. Kel loves orange soda! He do, he do, he doo~uu. Me? Not so much.');
-  alert('Do you know who else loves orange soda? Kel. Kel loves orange soda! He do, he do, he doo~uu. Me? Not so much.');
-}
-else if (orangeSoda === 'n' || orangeSoda === 'no')
-{
+    alert('Do you know who else loves orange soda? Kel. Kel loves orange soda! He do, he do, he doo~uu. Me? Not so much.');
+  }
+  else if (orangeSoda === 'n' || orangeSoda === 'no')
+  {
   // console.log('Same. I have a neutral amount of love for orange soda. Not like that Kel guy.');
-  alert('Same. I have a neutral amount of love for orange soda. Not like that Kel guy.');
-  score++;
-}
-else
-{
+    alert('Same. I have a neutral amount of love for orange soda. Not like that Kel guy.');
+    score++;
+  }
+  else
+  {
   // console.log('Not much of a citrus fan, are we?');
-  alert('Not much of a citrus fan, are we?');
+    alert('Not much of a citrus fan, are we?');
+  }
 }
+orangeSodaFunction();
 gameQuestionsCounter++;
 
 
