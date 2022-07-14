@@ -61,24 +61,27 @@ function myNameFunction()
 myNameFunction();
 gameQuestionsCounter++;
 
-
-let birthplace = prompt('Was I born on a ship in the Caspian Sea? y/n?').toLowerCase();
-if (birthplace === 'y' || birthplace === 'yes')
+function birthplaceFunction()
 {
+  let birthplace = prompt('Was I born on a ship in the Caspian Sea? y/n?').toLowerCase();
+  if (birthplace === 'y' || birthplace === 'yes')
+  {
   // console.log('Woahhh! Nautical, my friendo! I, for one, was born on land.');
-  alert('Woahhh! Gnarly, friend! I was born on land and not at sea.');
-}
-else if (birthplace === 'n' || birthplace === 'no')
-{
+    alert('Woahhh! Gnarly, friend! I was born on land and not at sea.');
+  }
+  else if (birthplace === 'n' || birthplace === 'no')
+  {
   // console.log('You too? We have so much in common ' + theirName + '.');
-  alert('You too? We have so much in common ' + theirName + '.');
-  score++;
-}
-else
-{
+    alert('You too? We have so much in common ' + theirName + '.');
+    score++;
+  }
+  else
+  {
   // console.log('Didn\'t like the question?');
-  alert('Didn\'t like the question?');
+    alert('Didn\'t like the question?');
+  }
 }
+birthplaceFunction();
 gameQuestionsCounter++;
 
 
