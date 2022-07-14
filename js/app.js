@@ -221,53 +221,57 @@ gameQuestionsCounter++;
 // 	- whichever comes first
 // - then display all the correct answers (meaning the items in the array) to the user using a for loop
 
+function chipGuessFunction()
+{
 // an array of chips that I like
-let chipsILike = ['Kettle Chips', 'Tim\'s Cascade Chips', 'Chocolate Chips', 'Chip \'n\' Dale: Rescue Rangers', 'Chip Skylark', 'Hospital Ice Chips', 'Chips Ahoy!', 'Fish \'n Chips', 'Chip Butty', 'Kale Chips', 'Not Pringle\'s', 'Potato Chips'];
+  let chipsILike = ['Kettle Chips', 'Tim\'s Cascade Chips', 'Chocolate Chips', 'Chip \'n\' Dale: Rescue Rangers', 'Chip Skylark', 'Hospital Ice Chips', 'Chips Ahoy!', 'Fish \'n Chips', 'Chip Butty', 'Kale Chips', 'Not Pringle\'s', 'Potato Chips'];
 
-// boolean flag to for while loop condition
-let theyGotItRight = false;
+  // boolean flag to for while loop condition
+  let theyGotItRight = false;
 
-// how many chances they have left to guess my chips
-let chipsGuessesRemaining = 6;
+  // how many chances they have left to guess my chips
+  let chipsGuessesRemaining = 6;
 
-// while the user hasn't gotten an answer right, or they have more than 0 attempts remaining
-while (!theyGotItRight && chipsGuessesRemaining > 0)
-{
+  // while the user hasn't gotten an answer right, or they have more than 0 attempts remaining
+  while (!theyGotItRight && chipsGuessesRemaining > 0)
+  {
   // asks them to guess what kind of chips I like and makes their input lowercase
-  let chipsGuess = prompt(`What kinds of of 'chip' do I like? Chip lives remaining: ${chipsGuessesRemaining}.`).toLowerCase();
-  console.log(`The user guessed '${chipsGuess}'`);
-  chipsGuessesRemaining --;
-  console.log(`the user has '${chipsGuessesRemaining}' guesses remaining`);
-  for(let i = 0; i < chipsILike.length; i++)
-  {
-    console.log('the value of i is: ' + i);
-    console.log(`the value of chipsILike[${i}]: is '${chipsILike[i]}'`);
-    if (chipsGuess === chipsILike[i].toLowerCase())
+    let chipsGuess = prompt(`What kinds of of 'chip' do I like? Chip lives remaining: ${chipsGuessesRemaining}.`).toLowerCase();
+    console.log(`The user guessed '${chipsGuess}'`);
+    chipsGuessesRemaining --;
+    console.log(`the user has '${chipsGuessesRemaining}' guesses remaining`);
+    for(let i = 0; i < chipsILike.length; i++)
     {
-      console.log('the user guessed a correct answer');
-      alert(`Wow ${theirName}! ${chipsGuess}?? Ya got me. You must know your chips, huh?`);
-      score++;
-      theyGotItRight = true;
+      console.log('the value of i is: ' + i);
+      console.log(`the value of chipsILike[${i}]: is '${chipsILike[i]}'`);
+      if (chipsGuess === chipsILike[i].toLowerCase())
+      {
+        console.log('the user guessed a correct answer');
+        alert(`Wow ${theirName}! ${chipsGuess}?? Ya got me. You must know your chips, huh?`);
+        score++;
+        theyGotItRight = true;
+      }
+      else
+      {
+        console.log(`The user's input isn't '${chipsILike[i].toLowerCase()}'.`);
+      }
     }
-    else
+    //todo: make this alert only appear if they get it wrong
+    if (!theyGotItRight)
     {
-      console.log(`The user's input isn't '${chipsILike[i].toLowerCase()}'.`);
+      alert('Uh oh, SpaghettiOs! Can we try something different?');
     }
   }
-  //todo: make this alert only appear if they get it wrong
-  if (!theyGotItRight)
-  {
-    alert('Uh oh, SpaghettiOs! Can we try something different?');
-  }
-}
-gameQuestionsCounter++;
 
-// alerts the user to every item in the chip array
-alert('Thanks for playing! For reference, here\'s a list of some chips I like:');
-for (let i = 0; i < chipsILike.length; i++)
-{
-  alert(chipsILike[i]);
+  // alerts the user to every item in the chip array
+  alert('Thanks for playing! For reference, here\'s a list of some chips I like:');
+  for (let i = 0; i < chipsILike.length; i++)
+  {
+    alert(chipsILike[i]);
+  }
 }
+chipGuessFunction();
+gameQuestionsCounter++;
 
 
 // todo: add their score out of how many total questions
