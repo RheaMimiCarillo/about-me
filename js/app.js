@@ -129,18 +129,18 @@ else
 */
 
 // this loop will ask the user to guess my age
-let remainingGuesses = 4;
+let remainingAgeGuesses = 4;
 let myAge = 30;
-while(remainingGuesses > 0)
+while(remainingAgeGuesses > 0)
 {
-  let ageGuess = prompt(`How many years wise am I? You have ${remainingGuesses} lives remaining. Choose wisely.`);
+  let ageGuess = parseInt(prompt(`How many years wise am I? You have ${remainingAgeGuesses} lives remaining. Choose wisely.`));
   // decrement remaining guesses
-  remainingGuesses--;
+  remainingAgeGuesses--;
   // if the user's guess is the same as my age
   if (ageGuess === myAge)
   {
     // alerts the user that they guessed correctly, then break out of the loop
-    console.log(`user entered ${ageGuess} and they have ${remainingGuesses} remaining`);
+    console.log(`user entered ${ageGuess} and they have ${remainingAgeGuesses} remaining`);
     alert(`I am ${myAge} years wise! How'd ya figure?`);
     break;
   }
@@ -149,15 +149,15 @@ while(remainingGuesses > 0)
   else if (ageGuess > myAge)
   {
     // alerts the user they guessed too high
-    console.log(`user entered '${ageGuess}' and they have ${remainingGuesses} remaining`);
+    console.log(`user entered '${ageGuess}' and they have ${remainingAgeGuesses} remaining`);
     alert('Uhhh, do I seem that old?');
   }
 
   // if their guess is lower than my age
-  else if (ageGuess < myAge)
+  else if (ageGuess < myAge && ageGuess > 0)
   {
     // alerts the user they guessed too low
-    console.log(`user entered '${ageGuess}' and they have ${remainingGuesses} remaining`);
+    console.log(`user entered '${ageGuess}' and they have ${remainingAgeGuesses} remaining`);
     alert('Aww, are you trying to flatter me with that lowball guess?');
   }
 
@@ -165,10 +165,55 @@ while(remainingGuesses > 0)
   else
   {
     // alerts the user that they need to input a number
-    console.log(`user entered '${ageGuess}' and they have ${remainingGuesses} remaining`);
-    alert('*boop boooop*. Please enter a whole number value.');
+    console.log(`user entered '${ageGuess}' and they have ${remainingAgeGuesses} remaining`);
+    alert('*boop boooop*. Invalid answer. Please enter a whole number value.');
   }
 }
+
+// todo: - add a 7th question
+// - the answers to the 7th question will be stored in an array
+// - the uswer will get 6 attempts to guess correctly
+// - the guesses will end once the user guesses any items in the array
+// - OR it will end when they run out of attempts
+// 	- whichever comes first
+// - then display all the correct answers (meaning the items in the array) to the user using a for loop
+
+// an array of chips that I like
+let chipsILike = ['Kettle Chips', 'Tim\'s Cascade Chips', 'Chocolate Chips', 'Chip \'n\' Dale: Rescue Rangers', 'Chip Skylark', 'Hospital Ice Chips','Not Pringle\'s', 'Chips Ahoy!', 'Fish \'n Chips', 'Chip Butty', 'Kale Chips', 'Potato Chips'];
+
+// boolean flag to for while loop condition
+let theyGotItRight = false;
+
+// how many chances they have left to guess my chips
+let chipsGuessesRemaining = 6;
+
+// while the user hasn't gotten an answer right, or they have more than 0 attempts remaining
+while (!theyGotItRight && chipsGuessesRemaining > 0)
+{
+  // asks them to guess what kind of chips I like and makes their input lowercase
+  let chipsGuess = prompt('Which chips do I like?');
+  chipsGuessesRemaining --;
+  for(let i = 0; i < chipsILike.length; i++)
+  {
+    if (chipsGuess === chipsILike[i-1])
+    {
+      console.log(`The user guessed ${chipsGuess} and they have '${chipsGuessesRemaining}' guesses remaining, but they answered correctly`);
+      alert(`Wow ${theirName}! You really know your chips!`);
+      theyGotItRight = true;
+    }
+    else
+    {
+      console.log(`The user guessed ${chipsGuess} and they have ${chipsGuessesRemaining} guesses remaining.`);
+    }
+  }
+}
+
+alert('Here are 7 of the chips I like:');
+for (let i = 0; i < chipsILike.length; i++)
+{
+  alert(chipsILike[i]);
+}
+
 
 // todo: add their score out of how many total questions
 // console.log('Thanks for playing along so well, ' + theirName + '!');
