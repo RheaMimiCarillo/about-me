@@ -209,7 +209,7 @@ let theyGotItRight = false;
 let chipsGuessesRemaining = 6;
 
 // while the user hasn't gotten an answer right, or they have more than 0 attempts remaining
-while (/*!theyGotItRight && */chipsGuessesRemaining > 0)
+while (!theyGotItRight && chipsGuessesRemaining > 0)
 {
   // asks them to guess what kind of chips I like and makes their input lowercase
   let chipsGuess = prompt(`What kinds of of 'chip' do I like? Chip lives remaining: ${chipsGuessesRemaining}.`);
@@ -226,7 +226,6 @@ while (/*!theyGotItRight && */chipsGuessesRemaining > 0)
       alert(`Wow ${theirName}! ${chipsGuess}?? Ya got me. You must know your chips, huh?`);
       score++;
       theyGotItRight = true;
-      break;
     }
     else
     {
