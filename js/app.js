@@ -203,7 +203,7 @@ gameQuestionsCounter++;
 let chipsILike = ['Kettle Chips', 'Tim\'s Cascade Chips', 'Chocolate Chips', 'Chip \'n\' Dale: Rescue Rangers', 'Chip Skylark', 'Hospital Ice Chips', 'Chips Ahoy!', 'Fish \'n Chips', 'Chip Butty', 'Kale Chips', 'Not Pringle\'s', 'Potato Chips'];
 
 // boolean flag to for while loop condition
-//let theyGotItRight = false;
+let theyGotItRight = false;
 
 // how many chances they have left to guess my chips
 let chipsGuessesRemaining = 6;
@@ -225,7 +225,7 @@ while (/*!theyGotItRight && */chipsGuessesRemaining > 0)
       console.log('the user guessed a correct answer');
       alert(`Wow ${theirName}! ${chipsGuess}?? Ya got me. You must know your chips, huh?`);
       score++;
-      //theyGotItRight = true;
+      theyGotItRight = true;
       break;
     }
     else
@@ -233,7 +233,11 @@ while (/*!theyGotItRight && */chipsGuessesRemaining > 0)
       console.log(`The user's input isn't '${chipsILike[i].toLowerCase()}'.`);
     }
   }
-  alert('Uh oh, SpaghettiOs! Can we try something different?');
+  //todo: make this alert only appear if they get it wrong
+  if (!theyGotItRight)
+  {
+    alert('Uh oh, SpaghettiOs! Can we try something different?');
+  }
 }
 gameQuestionsCounter++;
 
