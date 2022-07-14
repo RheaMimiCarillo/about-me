@@ -21,39 +21,44 @@ else
 }
 
 alert(`Let's play a guessing game ${theirName}.`);
-
+//TO DO: make gameScoring function
 // number of quesitons asked in the game
 let gameQuestionsCounter = 0;
 // number of questions answered correctly
 let score = 0;
 
-let myNameAnswered = false;
-while (!myNameAnswered) // while loop to force the user to enter a yes/no input
+function myNameFunction()
 {
+  let myNameAnswered = false;
+
+  while (!myNameAnswered) // while loop to force the user to enter a yes/no input
+  {
   //toLowerCase() will transform the string to all lowercase
-  let myName = prompt('Is my first name Reeya? y/n?').toLowerCase();
+    let myName = prompt('Is my first name Reeya? y/n?').toLowerCase();
 
-  if (myName === 'y' || myName === 'yes')
-  {
+    if (myName === 'y' || myName === 'yes')
+    {
     // console.log('Nice guess! My name is: Rhea (ray-ah).');
-    alert('Oh, so you\'ve heard of me? I do be Rhea (ray-ah).');
-    myNameAnswered = true;
-    score++;
-  }
+      alert('Oh, so you\'ve heard of me? I do be Rhea (ray-ah).');
+      myNameAnswered = true;
+      score++;
+    }
 
-  else if (myName === 'n' || myName === 'no')
-  {
+    else if (myName === 'n' || myName === 'no')
+    {
     // console.log('Correct! My name isn\'t \'Reeya\', it\'s  R H E A  Rhea (ray-ah); same as the mythical Greek Mother of the Gods.');
-    alert('Correct! My name isn\'t \'Reeya\', it\'s  R. H. E. A.  Rhea (ray-ah); same as the Mother of the Gods in the Greek Pantheon.');
-    myNameAnswered = true;
-  }
+      alert('Correct! My name isn\'t \'Reeya\', it\'s  R. H. E. A.  Rhea (ray-ah); same as the Mother of the Gods in the Greek Pantheon.');
+      myNameAnswered = true;
+    }
 
-  else
-  {
+    else
+    {
     // console.log('Oh no ya don\'t ,' + theirName + '! Please answer with a \'yes\' or a \'no\' and I\'ll forgive you c:.');
-    alert('Oh no ya don\'t ,' + theirName + '! Please answer with a \'yes\' or a \'no\' and I\'ll forgive you c:.');
+      alert('Oh no ya don\'t ,' + theirName + '! Please answer with a \'yes\' or a \'no\' and I\'ll forgive you c:.');
+    }
   }
 }
+myNameFunction();
 gameQuestionsCounter++;
 
 
@@ -112,7 +117,9 @@ else if (muffinMan === 'n' || muffinMan === 'no')
 else
 {
   // console.log('Not much of a talker, are we?');
-  alert('Not much of a talker, are we?');
+  // TO DO: add flavor text
+  // TO DO: look at else alerts 1-5
+  alert(`${muffinMan}??`);
 }
 gameQuestionsCounter++;
 
@@ -212,7 +219,7 @@ let chipsGuessesRemaining = 6;
 while (!theyGotItRight && chipsGuessesRemaining > 0)
 {
   // asks them to guess what kind of chips I like and makes their input lowercase
-  let chipsGuess = prompt(`What kinds of of 'chip' do I like? Chip lives remaining: ${chipsGuessesRemaining}.`);
+  let chipsGuess = prompt(`What kinds of of 'chip' do I like? Chip lives remaining: ${chipsGuessesRemaining}.`).toLowerCase();
   console.log(`The user guessed '${chipsGuess}'`);
   chipsGuessesRemaining --;
   console.log(`the user has '${chipsGuessesRemaining}' guesses remaining`);
