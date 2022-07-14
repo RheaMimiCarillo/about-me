@@ -164,50 +164,53 @@ gameQuestionsCounter++;
   - after the user is out of guesses, let em know the CORRECT answer
   - We'll have them guess a my age....
 */
-
-// this loop will ask the user to guess my age
-let remainingAgeGuesses = 4;
-let myAge = 30;
-while(remainingAgeGuesses > 0)
+function ageGuessFunction()
 {
-  let ageGuess = parseInt(prompt(`How many years wise am I? You have ${remainingAgeGuesses} lives remaining. Choose wisely.`));
-  // decrement remaining guesses
-  remainingAgeGuesses--;
-  // if the user's guess is the same as my age
-  if (ageGuess === myAge)
+// this loop will ask the user to guess my age
+  let remainingAgeGuesses = 4;
+  let myAge = 30;
+  while(remainingAgeGuesses > 0)
   {
+    let ageGuess = parseInt(prompt(`How many years wise am I? You have ${remainingAgeGuesses} lives remaining. Choose wisely.`));
+    // decrement remaining guesses
+    remainingAgeGuesses--;
+    // if the user's guess is the same as my age
+    if (ageGuess === myAge)
+    {
     // alerts the user that they guessed correctly, then break out of the loop
-    console.log(`user entered '${ageGuess}' and they have ${remainingAgeGuesses} remaining`);
-    alert(`I am ${myAge} years wise! How'd ya figure?`);
-    console.log('user entered the correct answer');
-    score++;
-    break;
-  }
+      console.log(`user entered '${ageGuess}' and they have ${remainingAgeGuesses} remaining`);
+      alert(`I am ${myAge} years wise! How'd ya figure?`);
+      console.log('user entered the correct answer');
+      score++;
+      break;
+    }
 
-  // if their guess is higher than my age
-  else if (ageGuess > myAge)
-  {
+    // if their guess is higher than my age
+    else if (ageGuess > myAge)
+    {
     // alerts the user they guessed too high
-    console.log(`user entered '${ageGuess}' and they have ${remainingAgeGuesses} remaining`);
-    alert('Uhhh, do I seem that old?');
-  }
+      console.log(`user entered '${ageGuess}' and they have ${remainingAgeGuesses} remaining`);
+      alert('Uhhh, do I seem that old?');
+    }
 
-  // if their guess is lower than my age
-  else if (ageGuess < myAge && ageGuess > 0)
-  {
+    // if their guess is lower than my age
+    else if (ageGuess < myAge && ageGuess > 0)
+    {
     // alerts the user they guessed too low
-    console.log(`user entered '${ageGuess}' and they have ${remainingAgeGuesses} remaining`);
-    alert('Aww, are you trying to flatter me with that lowball guess?');
-  }
+      console.log(`user entered '${ageGuess}' and they have ${remainingAgeGuesses} remaining`);
+      alert('Aww, are you trying to flatter me with that lowball guess?');
+    }
 
-  // any other input that isn't a number
-  else
-  {
+    // any other input that isn't a number
+    else
+    {
     // alerts the user that they need to input a number
-    console.log(`user entered '${ageGuess}' and they have ${remainingAgeGuesses} remaining`);
-    alert('*boop boooop*. Invalid answer. Please enter a whole number value.');
+      console.log(`user entered '${ageGuess}' and they have ${remainingAgeGuesses} remaining`);
+      alert('*boop boooop*. Invalid answer. Please enter a whole number value.');
+    }
   }
 }
+ageGuessFunction();
 gameQuestionsCounter++;
 
 // todo: - add a 7th question
