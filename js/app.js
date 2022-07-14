@@ -132,25 +132,28 @@ function muffinManFunction()
 muffinManFunction();
 gameQuestionsCounter++;
 
-
-let hotdog = prompt('Is a hotdog a sandwich? y/n?').toLowerCase();
-
-if (hotdog === 'y' || hotdog === 'yes')
+function hotdogFunction()
 {
+  let hotdog = prompt('Is a hotdog a sandwich? y/n?').toLowerCase();
+
+  if (hotdog === 'y' || hotdog === 'yes')
+  {
   // console.log('You\'re right! And in my eyes, so is a hamburger.');
-  alert('You\'re right! And in my eyes, a hamburger is, as well.');
-  score++;
-}
-else if (hotdog === 'n' || hotdog === 'no')
-{
+    alert('You\'re right! And in my eyes, a hamburger is, as well.');
+    score++;
+  }
+  else if (hotdog === 'n' || hotdog === 'no')
+  {
   // console.log('C\'mon ' + theirName + '! You\'re better than this! J.k. I respect our differences :3.');
-  alert('C\'mon ' + theirName + '! You\'re better than this! J.k. I respect our differences :3.');
-}
-else
-{
+    alert('C\'mon ' + theirName + '! You\'re better than this! J.k. I respect our differences :3.');
+  }
+  else
+  {
   // console.log('No comment.');
-  alert('No comment?');
+    alert('No comment?');
+  }
 }
+hotdogFunction();
 gameQuestionsCounter++;
 
 // TODO: 6th question
