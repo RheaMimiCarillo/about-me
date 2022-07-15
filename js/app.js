@@ -4,7 +4,6 @@
 console.log('henlo world :3');
 
 let theirName = prompt('Hello there, stranger! What can we call you?');
-
 if(theirName.length > 0)
 {
   // console.log('That just rolls off the tongue, now doesn\'t it?');
@@ -36,8 +35,7 @@ function myNameFunction()
     if (myName === 'y' || myName === 'yes')
     {
     // console.log('Nice guess! My name is: Rhea (ray-ah).');
-      alert('Oh, so you\'ve heard of me? I do be Rhea (ray-ah).');
-      myNameAnswered = true;
+      alert('Uhhhh not quite. My name is Rhea.');
     }
 
     else if (myName === 'n' || myName === 'no')
@@ -55,7 +53,6 @@ function myNameFunction()
     }
   }
 }
-
 
 function birthplaceFunction()
 {
@@ -77,7 +74,6 @@ function birthplaceFunction()
     alert('Didn\'t like the question?');
   }
 }
-
 
 function orangeSodaFunction()
 {
@@ -255,7 +251,7 @@ function chipGuessFunction()
 }
 
 // function for calling question functions to run the game
-function playGame()
+function playGame(theirName)
 {
   alert(`Let's play a guessing game ${theirName}. We'll give you a score at the end.`);
 
