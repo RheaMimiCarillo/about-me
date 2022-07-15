@@ -3,9 +3,6 @@
 // single quotes for JS; double quotes for HTML
 console.log('henlo world :3');
 
-
-// TODO: add scoreCounter and set it to 0;
-// TODO: increment score counter whenever the user guesses correctly
 let theirName = prompt('Hello there, stranger! What can we call you?');
 
 if(theirName.length > 0)
@@ -17,14 +14,14 @@ else
 {
   // console.log('My my, how mysterious~. Hmm, I\'ll call you...Stranger.');
   alert('My my, how mysterious~. Hmm, I\'ll call you...Stranger.');
-  theirName = 'Stranger';
+  theirName = 'Stranger'; // default name, if the user leaves the prompt blank
 }
 
-alert(`Let's play a guessing game ${theirName}.`);
+
 //TO DO: make gameScoring function
-// number of quesitons asked in the game
+// track number of questions asked in the game
 let gameQuestionsCounter = 0;
-// number of questions answered correctly
+// track number of questions answered correctly
 let score = 0;
 
 function myNameFunction()
@@ -41,7 +38,6 @@ function myNameFunction()
     // console.log('Nice guess! My name is: Rhea (ray-ah).');
       alert('Oh, so you\'ve heard of me? I do be Rhea (ray-ah).');
       myNameAnswered = true;
-      score++;
     }
 
     else if (myName === 'n' || myName === 'no')
@@ -49,6 +45,7 @@ function myNameFunction()
     // console.log('Correct! My name isn\'t \'Reeya\', it\'s  R H E A  Rhea (ray-ah); same as the mythical Greek Mother of the Gods.');
       alert('Correct! My name isn\'t \'Reeya\', it\'s  R. H. E. A.  Rhea (ray-ah); same as the Mother of the Gods in the Greek Pantheon.');
       myNameAnswered = true;
+      score++;
     }
 
     else
@@ -58,8 +55,7 @@ function myNameFunction()
     }
   }
 }
-myNameFunction();
-gameQuestionsCounter++;
+
 
 function birthplaceFunction()
 {
@@ -81,8 +77,7 @@ function birthplaceFunction()
     alert('Didn\'t like the question?');
   }
 }
-birthplaceFunction();
-gameQuestionsCounter++;
+
 
 function orangeSodaFunction()
 {
@@ -104,8 +99,7 @@ function orangeSodaFunction()
     alert('Not much of a citrus fan, are we?');
   }
 }
-orangeSodaFunction();
-gameQuestionsCounter++;
+
 
 function muffinManFunction()
 {
@@ -129,8 +123,7 @@ function muffinManFunction()
     alert(`${muffinMan}??`);
   }
 }
-muffinManFunction();
-gameQuestionsCounter++;
+
 
 function hotdogFunction()
 {
@@ -153,17 +146,8 @@ function hotdogFunction()
     alert('No comment?');
   }
 }
-hotdogFunction();
-gameQuestionsCounter++;
 
-// TODO: 6th question
-/*
-  - write a question that asks the user to guess a number
-  - alert() the user if their guess is too high or too low
-  - give the user EXACTLY 4 guesses to get the correct answer
-  - after the user is out of guesses, let em know the CORRECT answer
-  - We'll have them guess a my age....
-*/
+
 function ageGuessFunction()
 {
 // this loop will ask the user to guess my age
@@ -209,17 +193,12 @@ function ageGuessFunction()
       alert('*boop boooop*. Invalid answer. Please enter a whole number value.');
     }
   }
+  if (remainingAgeGuesses === 0)
+  {
+    alert(`JSYK, I turned ${myAge} years old in 2022.`);
+  }
 }
-ageGuessFunction();
-gameQuestionsCounter++;
 
-// todo: - add a 7th question
-// - the answers to the 7th question will be stored in an array
-// - the user will get 6 attempts to guess correctly
-// - the guesses will end once the user guesses any items in the array
-// - OR it will end when they run out of attempts
-// 	- whichever comes first
-// - then display all the correct answers (meaning the items in the array) to the user using a for loop
 
 function chipGuessFunction()
 {
@@ -251,30 +230,61 @@ function chipGuessFunction()
         score++;
         theyGotItRight = true;
       }
+
+      // condition to help debug the for loop
       else
       {
         console.log(`The user's input isn't '${chipsILike[i].toLowerCase()}'.`);
       }
     }
-    //todo: make this alert only appear if they get it wrong
+
+    // todo: maybe find a way to rewrite my logic, so that I don't have to have this additional if() statement
+    // this if() will only run the user runs out of tries and the theyGotItRight flag is still false
     if (!theyGotItRight)
     {
       alert('Uh oh, SpaghettiOs! Can we try something different?');
     }
   }
 
-  // alerts the user to every item in the chip array
+  // alerts the user to every item in the chip array in individual alerts
   alert('Thanks for playing! For reference, here\'s a list of some chips I like:');
   for (let i = 0; i < chipsILike.length; i++)
   {
     alert(chipsILike[i]);
   }
 }
-chipGuessFunction();
-gameQuestionsCounter++;
 
+// function for calling question functions to run the game
+function playGame()
+{
+  alert(`Let's play a guessing game ${theirName}. We'll give you a score at the end.`);
 
-// todo: add their score out of how many total questions
-// console.log('Thanks for playing along so well, ' + theirName + '!');
-console.log(`I counted ${gameQuestionsCounter}s and they scored ${score}`);
-alert(`Thanks for playing til the end ${theirName}! Your score was: ${score}/${gameQuestionsCounter}`);
+  myNameFunction();
+  gameQuestionsCounter++;
+  // todo: make function to keep count of total questions asked and their score (probably in an array)
+  // -- possibly make the score function take in a flag for whether the user answered correctly
+
+  birthplaceFunction();
+  gameQuestionsCounter++;
+
+  orangeSodaFunction();
+  gameQuestionsCounter++;
+
+  muffinManFunction();
+  gameQuestionsCounter++;
+
+  hotdogFunction();
+  gameQuestionsCounter++;
+
+  ageGuessFunction();
+  gameQuestionsCounter++;
+
+  chipGuessFunction();
+  gameQuestionsCounter++;
+
+  // console.log('Thanks for playing along so well, ' + theirName + '!');
+  console.log(`I counted ${gameQuestionsCounter}s and they scored ${score}`);
+  alert(`Thanks for playing til the end ${theirName}! Your score was: ${score}/${gameQuestionsCounter}`);
+}
+
+playGame();
